@@ -8,4 +8,4 @@ import pytest
 执行所有的测试用例
 """
 if __name__ == "__main__":
-    pytest.main(["-s", "test/test_helloworld.py"])
+    pytest.main(["-s", "test"])

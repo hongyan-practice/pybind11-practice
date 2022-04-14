@@ -2,6 +2,7 @@
 #  -*- coding: utf-8 -*-
 __date__ = '2021/6/10'
 
+from glob import glob
 from setuptools import setup
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 
@@ -9,9 +10,7 @@ __version__ = "0.0.1"
 
 ext_modules = [
     Pybind11Extension("demo",
-                      ["main_binding.cpp",
-                       "helloworld/binding.cpp"
-                       ],
+                      sorted(glob("**/*.cpp", recursive = True)),
                       define_macros=[('VERSION_INFO', __version__)]
                       ),
 ]
